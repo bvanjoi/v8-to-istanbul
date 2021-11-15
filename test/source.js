@@ -38,6 +38,11 @@ describe('Source', () => {
       const source = new CovSource(sourceRaw, 0)
       source.offsetToOriginalRelative(undefined, Infinity, Infinity).should.deepEqual({})
     })
+
+    it('accepts null', () => {
+      const sourceRaw = null
+      new CovSource(sourceRaw, 0).should.ok()
+    })
   })
 
   describe('ignore', () => {
